@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 最新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- jquery min-->
+<script src= "//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+<!-- angular js min-->
+<script src= "//cdn.bootcss.com/angular.js/1.4.5/angular.min.js"></script>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://v2.bootcss.com/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="http://v2.bootcss.com/assets/css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+
+<body >
+<div class="page-header">
+  <h1>Example page header <small>Subtext for header</small></h1>
+</div>
+<div ng-app="myApp" ng-controller="customersCtrl"> 
+
+<ul>
+  <li ng-repeat="x in names">
+	<div class="well center-block">
+		<img src="/download/exercises/images/{{ x.image}}" class="img-thumbnail .img-responsive">
+		<button type="button" class="btn btn-primary btn-xs .btn-block">{{x.name}}</button>
+		<li ng-repeat="y in $x">
+			{{y.name}}
+		</li>
+	</div>
+  </li>
+</ul>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("/download/exercises/list")
+    .success(function(response) {$scope.names = response;});
+});
+</script>
+
+</body>
+</html>

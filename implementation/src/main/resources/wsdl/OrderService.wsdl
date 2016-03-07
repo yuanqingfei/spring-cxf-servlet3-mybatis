@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soap.backend.order.yuanqingfei.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://order.soap.backend.order.yuanqingfei.com/" name="BackendOrderServiceImplService" targetNamespace="http://soap.backend.order.yuanqingfei.com/">
+  <wsdl:import location="./BackendOrderService.wsdl" namespace="http://order.soap.backend.order.yuanqingfei.com/">
+    </wsdl:import>
+  <wsdl:binding name="BackendOrderServiceImplServiceSoapBinding" type="ns1:BackendOrderService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="updateOrderStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateOrderStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateOrderStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BackendOrderException">
+        <soap:fault name="BackendOrderException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateOrderStatusList">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateOrderStatusList">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateOrderStatusListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BackendOrderException">
+        <soap:fault name="BackendOrderException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listOrders">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="listOrders">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listOrdersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BackendOrderException">
+        <soap:fault name="BackendOrderException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BackendOrderServiceImplService">
+    <wsdl:port binding="tns:BackendOrderServiceImplServiceSoapBinding" name="BackendOrderServiceImplPort">
+      <soap:address location="http://localhost:8088/backend-impl/ws/OrderService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

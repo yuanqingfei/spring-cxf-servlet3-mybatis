@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://order.soap.backend.order.yuanqingfei.com/" name="BackendOrderService" targetNamespace="http://order.soap.backend.order.yuanqingfei.com/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://order.soap.backend.order.yuanqingfei.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://order.soap.backend.order.yuanqingfei.com/">
+  <xs:element name="listOrders" type="tns:listOrders"/>
+  <xs:element name="listOrdersResponse" type="tns:listOrdersResponse"/>
+  <xs:element name="updateOrderStatus" type="tns:updateOrderStatus"/>
+  <xs:element name="updateOrderStatusList" type="tns:updateOrderStatusList"/>
+  <xs:element name="updateOrderStatusListResponse" type="tns:updateOrderStatusListResponse"/>
+  <xs:element name="updateOrderStatusResponse" type="tns:updateOrderStatusResponse"/>
+  <xs:complexType name="updateOrderStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="tns:backendOrderStatusEnum"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateOrderStatusResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="updateOrderStatusList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="tns:backendOrderStatusEnum"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateOrderStatusListResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="listOrders">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+      <xs:element name="arg1" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listOrdersResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:backendOrder"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="backendOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="seqNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:backendOrderStatusEnum"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="backendOrderStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="READY"/>
+      <xs:enumeration value="IN_PROGRESS"/>
+      <xs:enumeration value="COMPLETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BackendOrderException" type="tns:BackendOrderException"/>
+  <xs:complexType name="BackendOrderException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="updateOrderStatusListResponse">
+    <wsdl:part element="ns1:updateOrderStatusListResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listOrders">
+    <wsdl:part element="ns1:listOrders" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BackendOrderException">
+    <wsdl:part element="ns1:BackendOrderException" name="BackendOrderException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateOrderStatusResponse">
+    <wsdl:part element="ns1:updateOrderStatusResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateOrderStatus">
+    <wsdl:part element="ns1:updateOrderStatus" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listOrdersResponse">
+    <wsdl:part element="ns1:listOrdersResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateOrderStatusList">
+    <wsdl:part element="ns1:updateOrderStatusList" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="BackendOrderService">
+    <wsdl:operation name="updateOrderStatus">
+      <wsdl:input message="ns1:updateOrderStatus" name="updateOrderStatus">
+    </wsdl:input>
+      <wsdl:output message="ns1:updateOrderStatusResponse" name="updateOrderStatusResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:BackendOrderException" name="BackendOrderException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateOrderStatusList">
+      <wsdl:input message="ns1:updateOrderStatusList" name="updateOrderStatusList">
+    </wsdl:input>
+      <wsdl:output message="ns1:updateOrderStatusListResponse" name="updateOrderStatusListResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:BackendOrderException" name="BackendOrderException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listOrders">
+      <wsdl:input message="ns1:listOrders" name="listOrders">
+    </wsdl:input>
+      <wsdl:output message="ns1:listOrdersResponse" name="listOrdersResponse">
+    </wsdl:output>
+      <wsdl:fault message="ns1:BackendOrderException" name="BackendOrderException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
