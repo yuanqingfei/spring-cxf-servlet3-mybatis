@@ -5,8 +5,6 @@ import java.io.Serializable;
 /**
  * 订单
  * 
- * @author Steven_Ge
- *
  */
 // TODO: add attributes
 public class BackendOrder implements Serializable {

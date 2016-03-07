@@ -6,8 +6,6 @@ import javax.ws.rs.core.Response;
 /**
  * API Exception
  * 
- * @author Steven_Ge
- * 
  */
 public class ApiException extends WebApplicationException {
 

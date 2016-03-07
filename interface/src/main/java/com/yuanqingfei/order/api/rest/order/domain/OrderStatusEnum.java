@@ -3,8 +3,6 @@ package com.yuanqingfei.order.api.rest.order.domain;
 /**
  * 订单状态
  * 
- * @author Steven_Ge
- *
  */
 public enum OrderStatusEnum {
 	/**

@@ -6,8 +6,6 @@ import java.util.Date;
 /**
  * 订单
  * 
- * @author Steven_Ge
- *
  */
 public class Order implements Serializable {
 

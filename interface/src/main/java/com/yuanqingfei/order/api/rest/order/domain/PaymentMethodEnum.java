@@ -3,8 +3,6 @@ package com.yuanqingfei.order.api.rest.order.domain;
 /**
  * 订单支付方式
  * 
- * @author Steven_Ge
- *
  */
 public enum PaymentMethodEnum {
 	/**

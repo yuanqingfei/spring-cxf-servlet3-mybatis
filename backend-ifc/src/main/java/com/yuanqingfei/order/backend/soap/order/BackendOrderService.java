@@ -9,8 +9,6 @@ import com.yuanqingfei.order.backend.soap.order.domain.BackendOrderStatusEnum;
 
 /**
  * 
- * @author Steven_Ge
- *
  */
 @WebService
 public interface BackendOrderService {

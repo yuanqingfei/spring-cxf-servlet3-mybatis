@@ -16,8 +16,6 @@ import com.yuanqingfei.order.backend.soap.order.domain.BackendOrderStatusEnum;
 
 /**
  * 
- * @author Steven_Ge
- * 
  */
 public class BackendOrderServiceImpl implements BackendOrderService {
 	final private Logger log = Logger.getLogger(this.getClass());
